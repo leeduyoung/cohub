@@ -1,17 +1,38 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>홈</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="home-content">
 
-<ion-content padding>
+  <ion-slides pager autoplay="3000" loop="true">
+    <ion-slide style="background-color: green">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="home-button-container">
+    <div class="item item-avatar a1" ng-click="directSearchClub()">
+      <img src="assets/img/icon-magnifier@3x.png">
+      <h2>시설검색</h2>
+      <p>지역, 종목</p>
+    </div>
+
+    <div class="item item-avatar a2" ng-click="myClub()">
+      <img src="assets/img/icon-check@3x.png">
+      <h2>체크인 하기</h2>
+      <p>모바일 카드</p>
+    </div>
+  </div>
+
   <h2>Welcome to Ionic!</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
   </p>
   <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
   </p>
 </ion-content>
