@@ -8,10 +8,10 @@ import { NavController} from 'ionic-angular';
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'page-settings',
-  templateUrl: 'settings.html',
+  selector: 'page-option',
+  templateUrl: 'option.html',
 })
-export class SettingsPage {
+export class OptionPage {
 
   constructor(public navCtrl: NavController) {
   }
