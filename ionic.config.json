@@ -2,5 +2,11 @@
   "name": "cohub",
   "app_id": "",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/v2",
+      "proxyUrl": "http://apidev.refreshclub.co.kr/v2"
+    }
+  ]
 }

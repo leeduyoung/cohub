@@ -13,6 +13,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpModule } from '@angular/http';
+import { HttpService } from '../providers/http-service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,11 +24,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ClubPage,
     EventPage,
     OptionPage,
-    ProfilePage
+    ProfilePage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpService
   ]
 })
 export class AppModule {}
