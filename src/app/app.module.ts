@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Device } from '@ionic-native/device'
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from '@angular/http';
 import { HttpService } from '../providers/http-service';
+import { DataFactory } from '../providers/data-factory';
+import { UrlFactory } from '../providers/url-factory';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { HttpService } from '../providers/http-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpService
+    HttpService,
+    DataFactory,
+    UrlFactory,
+    Device
   ]
 })
 export class AppModule {}

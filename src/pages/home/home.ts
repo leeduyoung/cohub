@@ -4,6 +4,8 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
 import { HttpService } from '../../providers/http-service';
+import { DataFactory } from '../../providers/data-factory';
+import { UrlFactory } from '../../providers/url-factory';
 
 @Component({
   selector: 'page-home',
@@ -12,19 +14,58 @@ import { HttpService } from '../../providers/http-service';
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
 
-  constructor(public navCtrl: NavController, public httpService: HttpService) {
-
+  constructor(public navCtrl: NavController, public httpService: HttpService, public dataFactory: DataFactory) {
+    console.log('home page constructor');
   }
 
-  ngOnInit() {  
+  ngOnInit() {
     console.log('ngOnInit started');
   }
 
 
   ionViewDidLoad() {
     console.log('ionic view did load');
-    this.httpService.getTest();
-    console.log('end');
+
+    this.httpService.getToken()
+      .subscribe(
+      data => {
+        console.log(data);
+        this.dataFactory.setApiAccessToken(data.access_token);
+        console.log('1111', this.dataFactory.getApiAccessToken());
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('finished');
+      });
+
+
+    // this.httpService.signIn()
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     },
+    //     () => {
+    //       console.log('finished');
+    //     });
+
+
+    // this.httpService.userFeedback()
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     },
+    //     () => {
+    //       console.log('finished');
+    //     });
+
   }
 
 }
