@@ -6,6 +6,9 @@ import { Slides } from 'ionic-angular';
 import { HttpService } from '../../providers/http-service';
 import { DataFactory } from '../../providers/data-factory';
 import { UrlFactory } from '../../providers/url-factory';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'page-home',
@@ -26,19 +29,19 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionic view did load');
 
-    this.httpService.getToken()
-      .subscribe(
-      data => {
-        console.log(data);
-        this.dataFactory.setApiAccessToken(data.access_token);
-        console.log('1111', this.dataFactory.getApiAccessToken());
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
-        console.log('finished');
-      });
+    // this.httpService.getToken()
+    //   .subscribe(
+    //   data => {
+    //     console.log(data);
+    //     this.dataFactory.setApiAccessToken(data.access_token);
+    //     console.log('1111', this.dataFactory.getApiAccessToken());
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   },
+    //   () => {
+    //     console.log('finished');
+    //   });
 
 
     // this.httpService.signIn()
