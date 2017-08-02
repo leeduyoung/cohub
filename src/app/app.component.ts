@@ -21,13 +21,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      console.log('Device info is: ' + this.device);
-      console.log('Device model is: ' + this.device.model);
-      console.log('Device version is: ' + this.device.version);
-      console.log('Device UUID is: ' + this.device.uuid);
+      // console.log('Device info is: ' + this.device);
+      // console.log('Device model is: ' + this.device.model);
+      // console.log('Device version is: ' + this.device.version);
+      // console.log('Device UUID is: ' + this.device.uuid);
     });
-
-      console.log('Device info is: ' + this.device);
-      console.log('Device UUID is: ' + this.device.uuid);
   }
 }
