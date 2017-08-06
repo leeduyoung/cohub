@@ -9,9 +9,9 @@ import { NotifyPage } from '../notify/notify';
 import { ProfilePage } from '../profile/profile';
 
 @Component({
-  templateUrl: 'tabs.html',
+  templateUrl: 'top-tabs.html'
 })
-export class TabsPage {
+export class TopTabsPage {
 
   tab1Root = HomePage;
   tab2Root = RankPage;

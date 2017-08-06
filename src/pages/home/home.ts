@@ -16,6 +16,7 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
+  pet: string = "puppies";
 
   constructor(public navCtrl: NavController, public httpService: HttpService, public dataFactory: DataFactory) {
     console.log('home page constructor');
@@ -72,3 +73,4 @@ export class HomePage {
   }
 
 }
+
