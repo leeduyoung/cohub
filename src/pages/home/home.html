@@ -20,87 +20,53 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="home-ion-content">
     <div [ngSwitch]="pet">
         <ion-list *ngSwitchCase="'puppies'">
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-puppy-1.jpg">
-                </ion-thumbnail>
-                <h2>Ruby</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-puppy-2.jpg">
-                </ion-thumbnail>
-                <h2>Oscar</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-puppy-4.jpg">
-                </ion-thumbnail>
-                <h2>Zoey</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-puppy-3.jpg">
-                </ion-thumbnail>
-                <h2>Otto</h2>
-            </ion-item>
+            <ion-card>
+
+                <ion-item class="home-ion-item">
+                    <ion-avatar item-start>
+                        <img src="assets/img/idpic-default@3x.png">
+                    </ion-avatar>
+                    <h2 class="home-card-title">Marty McFly</h2>
+                    <p class="home-card-subtitle">November 5, 1955</p>
+                    <p class="uplaod-time">17시간 전</p>
+                </ion-item>
+
+                <img src="assets/img/dummy/coding.jpg">
+
+                <ion-card-content>
+                    <h2 class="home-card-content-title">
+                        ES6의 제너레이터를 사용한 비동기 프로그래밍
+                    </h2>
+                    <p class="home-card-content-description">
+                        Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa.
+                        This is heavy.
+                    </p>
+                    <p class="home-card-content-url">
+                        meetup.toast.com
+                    </p>
+                </ion-card-content>
+
+                <ion-row class="home-card-like-reply">
+                    <ion-col>
+                        <div>좋아요 35</div>
+                        <div>댓글 19</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="home-card-icon-button">
+                    <ion-icon name="ios-heart-outline"></ion-icon>
+                    <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+                    <ion-icon name="ios-share-outline"></ion-icon>
+                </ion-row>
+            </ion-card>
         </ion-list>
 
         <ion-list *ngSwitchCase="'kittens'">
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-kitten-1.jpg">
-                </ion-thumbnail>
-                <h2>Luna</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-kitten-3.jpg">
-                </ion-thumbnail>
-                <h2>Milo</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-kitten-4.jpg">
-                </ion-thumbnail>
-                <h2>Bandit</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-kitten-2.jpg">
-                </ion-thumbnail>
-                <h2>Nala</h2>
-            </ion-item>
         </ion-list>
 
         <ion-list *ngSwitchCase="'ducklings'">
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-duckling-1.jpg">
-                </ion-thumbnail>
-                <h2>Daffy</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-duckling-2.jpg">
-                </ion-thumbnail>
-                <h2>Huey</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-duckling-3.jpg">
-                </ion-thumbnail>
-                <h2>Dewey</h2>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/img/thumbnail-duckling-4.jpg">
-                </ion-thumbnail>
-                <h2>Louie</h2>
-            </ion-item>
         </ion-list>
     </div>
 </ion-content>
