@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 // import { ClubPage } from '../club/club';
@@ -7,6 +8,7 @@ import { EventPage } from '../event/event';
 // import { OptionPage } from '../option/option';
 import { NotifyPage } from '../notify/notify';
 import { ProfilePage } from '../profile/profile';
+import { ModalContentPage } from '../upload-modal/upload-modal';
 
 @Component({
   templateUrl: 'tabs.html',
@@ -19,7 +21,13 @@ export class TabsPage {
   tab4Root = NotifyPage;
   tab5Root = ProfilePage;
 
-  constructor() {
+  constructor(public modalCtrl: ModalController) {
 
+  }
+
+  uploadModal(characterNum) {
+    console.log('test');
+    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
+    modal.present();
   }
 }

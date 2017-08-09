@@ -23,6 +23,8 @@ import { UrlFactory } from '../providers/url-factory.ts';
 
 import { BasicPage } from '../pages/template/tabbar/tabbar.ts';
 import { TopTabsPage } from '../pages/template/tabbar/top-tabs.ts';
+// import { ModalContentPage } from '../pages/event/event.ts';
+import { ModalContentPage } from '../pages/upload-modal/upload-modal.ts';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { TopTabsPage } from '../pages/template/tabbar/top-tabs.ts';
     NotifyPage,
     ProfilePage,
     BasicPage,
+    ModalContentPage,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { TopTabsPage } from '../pages/template/tabbar/top-tabs.ts';
     NotifyPage,
     ProfilePage,
     BasicPage,
+    ModalContentPage,
   ],
   providers: [
     StatusBar,
