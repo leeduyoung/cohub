@@ -1,13 +1,19 @@
-<ion-header>
+<ion-header align-title="center">
     <ion-toolbar>
         <ion-title>
             Description
         </ion-title>
         <ion-buttons start>
-            <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
-      </button>
+            <button ion-button (click)="closeUploadModal()">
+                <!-- <span ion-text color="primary" showWhen="ios">Cancel</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon> -->
+                <span ion-text color="primary">취소</span>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <span ion-text color="primary">저장</span>
+            </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>

@@ -44,7 +44,7 @@ export class ModalContentPage {
         this.character = characters[this.params.get('charNum')];
     }
 
-    dismiss() {
+    closeUploadModal() {
         this.viewCtrl.dismiss();
     }
 }
