@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, FabContainer } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 // import { ClubPage } from '../club/club';
@@ -25,7 +25,9 @@ export class TabsPage {
 
   }
 
-  uploadModal(characterNum) {
+  uploadModal(characterNum, fab: FabContainer) {
+    fab.close();
+    
     console.log('test');
     let modal = this.modalCtrl.create(ModalContentPage, characterNum);
     modal.present();

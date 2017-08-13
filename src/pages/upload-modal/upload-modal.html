@@ -12,25 +12,30 @@
         </ion-buttons>
         <ion-buttons end>
             <button ion-button icon-only>
-                <span ion-text color="primary">저장</span>
+                <span ion-text color="primary">게시</span>
             </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 <ion-content>
+
     <ion-list>
+
         <ion-item>
-            <ion-avatar item-start>
-                <img src="{{character.image}}">
-            </ion-avatar>
-            <h2>{{character.name}}</h2>
-            <p>{{character.quote}}</p>
+            <ion-label>사이트 주소</ion-label>
+            <ion-input type="url" placeholder="Enter a site url"></ion-input>
         </ion-item>
-        <ion-item *ngFor="let item of character['items']">
-            {{item.title}}
-            <ion-note item-end>
-                {{item.note}}
-            </ion-note>
+
+        <ion-item>
+            <ion-label>키워드</ion-label>
+            <ion-input type="text" placeholder="Enter a keyword"></ion-input>
         </ion-item>
+
+        <ion-item>
+            <ion-label>설명</ion-label>
+            <ion-textarea placeholder="Enter a description"></ion-textarea>
+        </ion-item>
+
     </ion-list>
+
 </ion-content>
