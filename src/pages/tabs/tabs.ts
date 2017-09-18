@@ -27,8 +27,6 @@ export class TabsPage {
 
   uploadModal(characterNum, fab: FabContainer) {
     fab.close();
-    
-    console.log('test');
     let modal = this.modalCtrl.create(ModalContentPage, characterNum);
     modal.present();
   }
