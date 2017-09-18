@@ -1,11 +1,44 @@
 <ion-header>
-  <ion-navbar>
+  <!-- <ion-navbar>
     <ion-title>
       순위
     </ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="rank">
+      <ion-segment-button value="keyword">
+        인기 키워드
+      </ion-segment-button>
+      <ion-segment-button value="site">
+        인기 사이트
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  순위 페이지
+
+  <div [ngSwitch]="rank">
+    <!-- <ion-list *ngSwitchCase="'keyword'">
+      키워드
+    </ion-list> -->
+
+    <!-- <ion-list *ngSwitchCase="'site'">
+      사이트
+    </ion-list> -->
+
+    <ion-list *ngSwitchCase="'keyword'" inset>
+      <button ion-item *ngFor="let item of items" let i = index (click)="itemSelected(item, i)">
+        {{i}} {{ item }}
+      </button>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'site'" inset>
+      <button ion-item *ngFor="let item of items2" let i = index (click)="itemSelected(item, i)">
+        {{ item }}
+      </button>
+    </ion-list>
+
+  </div>
+
 </ion-content>

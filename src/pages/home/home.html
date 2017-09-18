@@ -1,19 +1,19 @@
 <ion-header>
-    <ion-navbar no-border-bottom>
+    <!-- <ion-navbar no-border-bottom>
         <ion-title>
-            Segments
+            홈
         </ion-title>
-    </ion-navbar>
+    </ion-navbar> -->
 
     <ion-toolbar no-border-top>
-        <ion-segment [(ngModel)]="pet">
-            <ion-segment-button value="puppies">
+        <ion-segment [(ngModel)]="feed">
+            <ion-segment-button value="recent">
                 최신
             </ion-segment-button>
-            <ion-segment-button value="kittens">
+            <ion-segment-button value="popular">
                 인기
             </ion-segment-button>
-            <ion-segment-button value="ducklings">
+            <ion-segment-button value="follow">
                 팔로잉
             </ion-segment-button>
         </ion-segment>
@@ -21,8 +21,8 @@
 </ion-header>
 
 <ion-content class="home-ion-content">
-    <div [ngSwitch]="pet">
-        <ion-list *ngSwitchCase="'puppies'">
+    <div [ngSwitch]="feed">
+        <ion-list *ngSwitchCase="'recent'">
             <ion-card>
 
                 <ion-item class="home-ion-item">
@@ -63,10 +63,10 @@
             </ion-card>
         </ion-list>
 
-        <ion-list *ngSwitchCase="'kittens'">
+        <ion-list *ngSwitchCase="'popular'">
         </ion-list>
 
-        <ion-list *ngSwitchCase="'ducklings'">
+        <ion-list *ngSwitchCase="'follow'">
         </ion-list>
     </div>
 </ion-content>
