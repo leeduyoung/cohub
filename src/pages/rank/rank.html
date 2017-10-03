@@ -19,26 +19,17 @@
 <ion-content padding>
 
   <div [ngSwitch]="rank">
-    <!-- <ion-list *ngSwitchCase="'keyword'">
-      키워드
-    </ion-list> -->
-
-    <!-- <ion-list *ngSwitchCase="'site'">
-      사이트
-    </ion-list> -->
-
     <ion-list *ngSwitchCase="'keyword'" inset>
-      <button ion-item *ngFor="let item of items" let i = index (click)="itemSelected(item, i)">
-        {{i}} {{ item }}
+      <button ion-item *ngFor="let item of items; let i=index" (click)="itemSelected(item, i)">
+        {{i+1}}. {{ item }}
       </button>
     </ion-list>
 
     <ion-list *ngSwitchCase="'site'" inset>
-      <button ion-item *ngFor="let item of items2" let i = index (click)="itemSelected(item, i)">
-        {{ item }}
+      <button ion-item *ngFor="let item of items2; let i=index" (click)="itemSelected(item, i)">
+        {{i+1}}. {{ item }}
       </button>
     </ion-list>
-
   </div>
 
 </ion-content>

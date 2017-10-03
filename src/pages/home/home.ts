@@ -23,12 +23,12 @@ export class HomePage {
   }
 
   ngOnInit() {
-    console.log('ngOnInit started');
+    console.log('HomePage ngOnInit started');
   }
 
 
   ionViewDidLoad() {
-    console.log('ionic view did load');
+    console.log('HomePage ionic view did load');
 
     // this.httpService.getToken()
     //   .subscribe(

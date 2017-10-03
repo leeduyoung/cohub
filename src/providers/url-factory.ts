@@ -3,7 +3,8 @@ export class UrlFactory {
 
     constructor() {
         // this.host = 'http://api.refreshclub.co.kr'; //real
-        this.host = ''; //test
+        // this.host = ''; //test
+        this.host = 'http://localhost:3000'; //test
     }
 
 	getUrl() {
@@ -87,5 +88,10 @@ export class UrlFactory {
 		return urls;
 	}
 
-
+    getUrl2() {
+        let urls = {
+            login: this.host + '/api/users/login'
+        }
+        return urls;
+    }
 }

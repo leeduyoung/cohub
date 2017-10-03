@@ -38,7 +38,7 @@ export class HttpService {
     // console.log(this.http.post("/v2/o/token/?" + body, headers).map(res => res.json()));
 
     return this.http.post(this.urlFactory.getUrl().getApiAccessToken + '?' + body, headers)
-    // return this.http.post("/v2/o/token/?" + body, headers)
+      // return this.http.post("/v2/o/token/?" + body, headers)
       .map(res => res.json());
   }
 
@@ -60,7 +60,14 @@ export class HttpService {
     let json = JSON.stringify(memberInfo);
 
     // return this.http.post(this.baseUrl + '/v2/accounts/signin', json, headers)
-    return this.http.post(this.urlFactory.getUrl().accountsSignin, json, {headers: headers})
+    return this.http.post(this.urlFactory.getUrl().accountsSignin, json, { headers: headers })
+      .map(res => res.json());
+  }
+
+  login(id: String, password: String) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.urlFactory.getUrl2().login, JSON.stringify({ 'user_id': id, 'password': password }), { headers: headers })
       .map(res => res.json());
   }
 
