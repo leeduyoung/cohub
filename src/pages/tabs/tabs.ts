@@ -46,69 +46,7 @@ export class TabsPage {
     let password: String = '1234qwer';
 
     if (this.platform.is('cordova')) {
-      this.secureStorage.create('localSecureStorage')
-        .then((storage: SecureStorageObject) => {
-
-          let id:String;
-          let password:String;
-
-          storage.get('id')
-            .then(
-            data => {
-              console.log('get key');
-              console.log(data);
-            },
-            error => console.log(error)
-            );
-
-          storage.set('id', 'test6@naver.com')
-            .then(
-            data => {
-              console.log('set id');
-              console.log(data);
-              id = data;
-              return storage.set('password', '1234qwer');
-            },
-            error => console.log(error)
-            )
-            .then(
-            data => {
-              console.log('set password chain');
-              console.log(data);
-              password = data;
-            },
-            error => console.log(error)
-            );
-
-          storage.set('password', '1234qwer')
-            .then(
-            data => {
-              console.log('set password');
-              console.log(data);
-              password = data;
-            },
-            error => console.log(error)
-            );
-
-          // storage.remove('key')
-          //   .then(
-          //   data => console.log(data),
-          //   error => console.log(error)
-          //   );
-
-            this.httpService.login(id, password)
-            .subscribe(
-            data => {
-              console.log('success to login');
-              console.log(data);
-            },
-            error => {
-              console.log(error);
-            },
-            () => {
-              console.log('finished');
-            });
-        });
+      this.autoSignin();
     }
     else {
       this.httpService.login(id, password)
@@ -154,67 +92,80 @@ export class TabsPage {
 
   autoSignin() {
     this.secureStorage.create('localSecureStorage')
-    .then((storage: SecureStorageObject) => {
+      .then((storage: SecureStorageObject) => {
 
-      let id:String;
-      let password:String;
+        let id: String;
+        let password: String;
 
-      storage.get('id')
-        .then(
-        data => {
-          console.log('get key');
-          console.log(data);
-        },
-        error => console.log(error)
-        );
+        storage.get('id')
+          .then(
+          data => {
+            console.log('get id', data);
+            id = data;
+            return storage.get('password');
+          })
+          .then(data => {
+            console.log('get password', data);
+            password = data;
+            return this.httpService.login(id, password).subscribe();
+          })
+          .then(data => {
+            console.log(data);
+          });
+          
+    // this.httpService.signIn()
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //     },
+    //     error => {
+    //       console.log(error);
+    //     },
+    //     () => {
+    //       console.log('finished');
+    //     });
 
-      storage.set('id', 'test6@naver.com')
-        .then(
-        data => {
-          console.log('set id');
-          console.log(data);
-          id = data;
-          return storage.set('password', '1234qwer');
-        },
-        error => console.log(error)
-        )
-        .then(
-        data => {
-          console.log('set password chain');
-          console.log(data);
-          password = data;
-        },
-        error => console.log(error)
-        );
+        // storage.get('id')
+        //   .then(
+        //   data => {
+        //     console.log('get key');
+        //     console.log(data);
+        //   },
+        //   error => console.log(error)
+        //   );
 
-      storage.set('password', '1234qwer')
-        .then(
-        data => {
-          console.log('set password');
-          console.log(data);
-          password = data;
-        },
-        error => console.log(error)
-        );
+        // storage.set('id', 'test6@naver.com')
+        //   .then(
+        //   data => {
+        //     console.log('set id');
+        //     console.log(data);
+        //     id = data;
+        //     return storage.set('password', '1234qwer');
+        //   },
+        //   error => console.log(error)
+        //   )
+        //   .then(
+        //   data => {
+        //     console.log('set password chain');
+        //     console.log(data);
+        //     password = data;
+        //   },
+        //   error => console.log(error)
+        //   );
 
-      // storage.remove('key')
-      //   .then(
-      //   data => console.log(data),
-      //   error => console.log(error)
-      //   );
-
-        this.httpService.login(id, password)
-        .subscribe(
-        data => {
-          console.log('success to login');
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        },
-        () => {
-          console.log('finished');
-        });
-    });
+        // storage.set('password', '1234qwer')
+        //   .then(
+        //   data => {
+        //     console.log('set password');
+        //     console.log(data);
+        //     password = data;
+        //   },
+        //   error => console.log(error)
+        //   );
+      })
+      .catch(error => {
+        console.log('2222');
+        console.log(error);
+      });
   }
 }
