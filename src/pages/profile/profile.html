@@ -1,11 +1,69 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       프로필
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  profile
+<ion-content padding class="profile-content">
+  <div class="profile-container">
+    <div class="profile-background">
+      <img class="background" src="assets/img/dummy/pexels-photo.jpg" alt="profile-background">
+
+      <div class="profile-image">
+        <img src="assets/img/dummy/pexels-photo.jpg" alt="profile-background">
+      </div>
+    </div>
+
+    <div class="profile-info">
+      <div class="nickname">
+        TEAVANA
+      </div>
+
+      <div class="introduce">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni officia cupiditate sapiente est temporibus, tempore
+        adipisci dolores accusamus ducimus quod!
+      </div>
+
+      <div class="more-button">
+          more<ion-icon name="arrow-down"></ion-icon>
+      </div>
+
+      <div class="button-container">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="title">좋아요</div>
+              <div class="count">39</div>
+            </ion-col>
+            <ion-col>
+              <div class="title">팔로워</div>
+              <div class="count">17</div>
+            </ion-col>
+            <ion-col>
+              <div class="title">팔로잉</div>
+              <div class="count">140</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="detail-button">자세히 보기</div>
+            </ion-col>
+            <ion-col>
+              <div class="follow-button">팔로잉<ion-icon name="arrow-down"></ion-icon></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="profile-my-feed">
+      <div class="title">내 피드</div>
+
+    </div>
+
+  </div>
 </ion-content>
