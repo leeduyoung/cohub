@@ -3,8 +3,10 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Device } from '@ionic-native/device';
+import { Network } from '@ionic-native/network';
 
 import { TabsPage } from '../pages/tabs/tabs';
+// import { NetworkFactory } from '../providers/network-factory';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private device: Device) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private device: Device, private network: Network) {
     console.log('app component constructor');
     
     console.log('platform : ', platform);
@@ -26,6 +28,9 @@ export class MyApp {
       // console.log('Device model is: ' + this.device.model);
       // console.log('Device version is: ' + this.device.version);
       // console.log('Device UUID is: ' + this.device.uuid);
+
+      console.log('navigator : ', navigator);
+      // console.log('networkFactory.isOnline() : ', networkFactory.isOnline());
     });
   }
 }

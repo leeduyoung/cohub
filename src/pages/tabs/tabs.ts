@@ -11,6 +11,7 @@ import { ProfilePage } from '../profile/profile';
 import { ModalContentPage } from '../upload-modal/upload-modal';
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
 import { Device } from '@ionic-native/device';
+import { Network } from '@ionic-native/network';
 import { Platform } from 'ionic-angular';
 
 import { HttpService } from '../../providers/http-service';
@@ -28,7 +29,7 @@ export class TabsPage {
 
   // private secureStorage: SecureStorage;
 
-  constructor(public modalCtrl: ModalController, private device: Device, public platform: Platform, private secureStorage: SecureStorage, public httpService: HttpService) {
+  constructor(public modalCtrl: ModalController, private device: Device, public platform: Platform, private secureStorage: SecureStorage, public httpService: HttpService, private network: Network) {
     // this.secureStorage = new SecureStorage();
     console.log('Device info is: ' + this.device);
     console.log('Device UUID is: ' + this.device.uuid);
@@ -112,18 +113,18 @@ export class TabsPage {
           .then(data => {
             console.log(data);
           });
-          
-    // this.httpService.signIn()
-    //   .subscribe(
-    //     data => {
-    //       console.log(data);
-    //     },
-    //     error => {
-    //       console.log(error);
-    //     },
-    //     () => {
-    //       console.log('finished');
-    //     });
+
+        // this.httpService.signIn()
+        //   .subscribe(
+        //     data => {
+        //       console.log(data);
+        //     },
+        //     error => {
+        //       console.log(error);
+        //     },
+        //     () => {
+        //       console.log('finished');
+        //     });
 
         // storage.get('id')
         //   .then(

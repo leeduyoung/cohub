@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform, NavParams, ViewController } from 'ionic-angular';
+import { NavParams, ViewController } from 'ionic-angular';
 
 @Component({
   selector: 'page-upload-modal',
@@ -8,7 +8,7 @@ import { NavController, Platform, NavParams, ViewController } from 'ionic-angula
 export class ModalContentPage {
     character;
 
-    constructor(public platform: Platform, public params: NavParams, public viewCtrl: ViewController) {
+    constructor(public params: NavParams, public viewCtrl: ViewController) {
         var characters = [
             {
                 name: 'Gollum',

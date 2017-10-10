@@ -3,10 +3,10 @@ import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
-import { HttpService } from '../../providers/http-service';
-import { DataFactory } from '../../providers/data-factory';
-import { UrlFactory } from '../../providers/url-factory';
-import { Http } from '@angular/http';
+// import { HttpService } from '../../providers/http-service';
+// import { DataFactory } from '../../providers/data-factory';
+// import { UrlFactory } from '../../providers/url-factory';
+// import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -18,7 +18,8 @@ export class HomePage {
   @ViewChild(Slides) slides: Slides;
   feed: string = "recent";
 
-  constructor(public navCtrl: NavController, public httpService: HttpService, public dataFactory: DataFactory) {
+  // constructor(public navCtrl: NavController, public httpService: HttpService, public dataFactory: DataFactory) {
+  constructor(public navCtrl: NavController) {
     console.log('home page constructor');
   }
 

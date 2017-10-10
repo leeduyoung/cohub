@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Device } from '@ionic-native/device'
 import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
+import { Network } from '@ionic-native/network';
 
 import { TabsPage } from '../pages/tabs/tabs.ts';
 import { HomePage } from '../pages/home/home.ts';
@@ -21,7 +22,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { HttpService } from '../providers/http-service.ts';
 import { DataFactory } from '../providers/data-factory.ts';
+import { DataFactory2 } from '../providers/data-factory2.ts';
 import { UrlFactory } from '../providers/url-factory.ts';
+import { NetworkFactory } from '../providers/network-factory.ts';
 
 // import { ModalContentPage } from '../pages/event/event.ts';
 import { ModalContentPage } from '../pages/upload-modal/upload-modal.ts';
@@ -65,9 +68,12 @@ import { ModalContentPage } from '../pages/upload-modal/upload-modal.ts';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpService,
     DataFactory,
+    DataFactory2,
     UrlFactory,
+    NetworkFactory,
     Device,
     SecureStorage,
+    Network,
   ]
 })
 export class AppModule {}
