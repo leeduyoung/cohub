@@ -25,7 +25,8 @@ import { DataFactory } from '../providers/data-factory.ts';
 import { DataFactory2 } from '../providers/data-factory2.ts';
 import { UrlFactory } from '../providers/url-factory.ts';
 import { NetworkFactory } from '../providers/network-factory.ts';
-
+import { Highlight } from '../template/highlight';
+import { ChildCat } from '../template/child-cat/child-cat';
 // import { ModalContentPage } from '../pages/event/event.ts';
 import { ModalContentPage } from '../pages/upload-modal/upload-modal.ts';
 
@@ -42,6 +43,8 @@ import { ModalContentPage } from '../pages/upload-modal/upload-modal.ts';
     ProfilePage,
     ModalContentPage,
     SignPage,
+    Highlight,
+    ChildCat,
   ],
   imports: [
     BrowserModule,
